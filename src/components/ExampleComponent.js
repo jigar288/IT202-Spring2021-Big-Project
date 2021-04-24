@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ExampleComponent() {
+  
+  // ! FIXME: use the classes below
+  // eslint-disable-next-line no-unused-vars
   const classes = useStyles();
   return (
     <p>Example Component</p>

@@ -13,7 +13,6 @@ npm start
 ## TODO
 
 Project setup tasks
-- fix routing w/ hash router
 - look at samples for project setup
     - create react app from command line & copy over service worker files
     - https://github.com/microsoft/vscode-react-sample 

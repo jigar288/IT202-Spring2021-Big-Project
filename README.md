@@ -19,8 +19,14 @@ Project setup tasks
 
 - vs code react docs: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 
-- add linter
 - add dot env file
 - add babel & webpack
 - use root relative babel plugin
 - setup CI/CD with github pages
+
+
+PWA setup 
+- consider using workbox 
+- resources
+    - npx create-react-app my-app --template cra-template-pwa
+    - https://blog.logrocket.com/setting-up-a-pwa-with-service-workers-and-create-react-app/

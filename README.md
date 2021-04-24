@@ -10,19 +10,23 @@ npm install
 npm start
 ```
 
-## TODO
+## Current TODOs
+
+
+## TODOs
 
 Project setup tasks
 - look at samples for project setup
-    - create react app from command line & copy over service worker files
     - https://github.com/microsoft/vscode-react-sample 
 
 - vs code react docs: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 
 - add dot env file
-- add babel & webpack
+- add babel & webpack  
+    - what is the purpose of it?
 - use root relative babel plugin
 - setup CI/CD with github pages
+- review sw files
 
 
 PWA setup 

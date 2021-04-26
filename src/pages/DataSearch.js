@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function SearchData() {
+export default function DataSearch() {
   const classes = useStyles();
   return (
     <div>

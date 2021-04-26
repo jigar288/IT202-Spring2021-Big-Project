@@ -56,7 +56,7 @@ function displayError(){
 }
 
 // ! FIXME: add explicit prop validation
-export default function ViewData(props) {
+export default function DataListView(props) {
   const classes = useStyles();
 
   return (

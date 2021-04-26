@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, HashRouter, Switch } from 'react-router-dom'
 import Home from './Home'
-import SearchData from './SearchData'
-import ViewData from './ViewData'
+import DataSearch from './DataSearch'
+import DataListView from './DataListView'
 
 export default function App() {
   return (
     <HashRouter>
       <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/search' component={SearchData} />
-          <Route path='/view-data' component={ViewData} />
+          <Route path='/search' component={DataSearch} />
+          <Route path='/view-data' component={DataListView} />
       </Switch>
     </HashRouter>
   );

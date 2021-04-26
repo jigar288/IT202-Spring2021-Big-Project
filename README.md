@@ -12,6 +12,10 @@ npm start
 
 ## Current TODOs
 
+enable and fix issus
+
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
 
 ## TODOs
 

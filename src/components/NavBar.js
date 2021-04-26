@@ -5,19 +5,29 @@ import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Button from '@material-ui/core/Button';
+import { Route } from 'react-router-dom'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(6, 0, 3),
-  },
-  lightBulb: {
-    verticalAlign: 'middle',
-    marginRight: theme.spacing(1),
+    flexGrow: 1,
   },
   icon: {
     marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
   }
 }));
+
+function renderNavLink(buttonLabel, pathname){
+  return(
+    <Route render={({history}) => (                      
+      <Button color="inherit" onClick={() => { history.push(pathname) }}>{buttonLabel}</Button>
+    )} />  
+  );
+}
 
 export default function NavBar() {
   
@@ -26,14 +36,21 @@ export default function NavBar() {
   return (
     <React.Fragment>
       <CssBaseline />
+
       <AppBar position="relative">
         <Toolbar>
           <LocalHospitalIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography variant="h6" color="inherit" className={classes.title}>
             Healthy Chicago
           </Typography>
+
+          { renderNavLink('Home', '/') }
+          { renderNavLink('Search', '/search') }
+          { renderNavLink('Data View', '/view-data') }
+          { renderNavLink('Map View', '/map-view') }
+
         </Toolbar>
-      </AppBar>        
+      </AppBar>      
     </React.Fragment>
   );
 }

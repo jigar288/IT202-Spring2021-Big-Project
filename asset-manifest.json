@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/IT202-Spring2021-BigProject/static/js/main.997c952b.chunk.js",
-    "main.js.map": "/IT202-Spring2021-BigProject/static/js/main.997c952b.chunk.js.map",
+    "main.js": "/IT202-Spring2021-BigProject/static/js/main.d4187afb.chunk.js",
+    "main.js.map": "/IT202-Spring2021-BigProject/static/js/main.d4187afb.chunk.js.map",
     "runtime-main.js": "/IT202-Spring2021-BigProject/static/js/runtime-main.06b4014f.js",
     "runtime-main.js.map": "/IT202-Spring2021-BigProject/static/js/runtime-main.06b4014f.js.map",
-    "static/js/2.5f342ce6.chunk.js": "/IT202-Spring2021-BigProject/static/js/2.5f342ce6.chunk.js",
-    "static/js/2.5f342ce6.chunk.js.map": "/IT202-Spring2021-BigProject/static/js/2.5f342ce6.chunk.js.map",
+    "static/js/2.58376370.chunk.js": "/IT202-Spring2021-BigProject/static/js/2.58376370.chunk.js",
+    "static/js/2.58376370.chunk.js.map": "/IT202-Spring2021-BigProject/static/js/2.58376370.chunk.js.map",
     "index.html": "/IT202-Spring2021-BigProject/index.html",
     "service-worker.js": "/IT202-Spring2021-BigProject/service-worker.js",
     "service-worker.js.map": "/IT202-Spring2021-BigProject/service-worker.js.map",
-    "static/js/2.5f342ce6.chunk.js.LICENSE.txt": "/IT202-Spring2021-BigProject/static/js/2.5f342ce6.chunk.js.LICENSE.txt"
+    "static/js/2.58376370.chunk.js.LICENSE.txt": "/IT202-Spring2021-BigProject/static/js/2.58376370.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.06b4014f.js",
-    "static/js/2.5f342ce6.chunk.js",
-    "static/js/main.997c952b.chunk.js"
+    "static/js/2.58376370.chunk.js",
+    "static/js/main.d4187afb.chunk.js"
   ]
 }

@@ -1,35 +1,44 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../components/NavBar'
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import dotenv from 'dotenv'
+dotenv.config()
 
 
-const useStyles = makeStyles((theme) => ({
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-}));
+const mapStyles = {
+  width: '100%',
+  height: '100%'
+};
 
 
-export default function MapView() {
-  const classes = useStyles();
+export function MapViewComponent(props) {
+  // const classes = useStyles();
+  console.log(props)
   return (
     <div>
         <NavBar/>
-        
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Map View
-            </Typography>
-          </Container>
-        </div>        
+
+        <Map
+            google={props.google}
+            zoom={14}
+            style={mapStyles}
+            initialCenter={
+              {
+                lat: props.location.state.data.longitude,
+                lng: props.location.state.data.latitude
+              }
+            }> 
+
+            <Marker position = {{ lat: props.location.state.data.longitude, lng: props.location.state.data.latitude }} />            
+          </Map>
 
     </div>
   );
 }
+
+export default GoogleApiWrapper({
+  // eslint-disable-next-line no-undef
+  apiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY
+})(MapViewComponent);
+

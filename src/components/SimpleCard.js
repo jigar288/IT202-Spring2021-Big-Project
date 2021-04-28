@@ -6,6 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Route } from 'react-router-dom'
+
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +25,14 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
+
+function handleViewMap(locationDetails, history){                    
+    console.log(JSON.stringify(locationDetails))
+    history.push({
+      pathname: '/map-view',
+      state: { data: locationDetails }
+    })
+}
 
 export default function SimpleCard(props) {
   const classes = useStyles();
@@ -44,7 +54,9 @@ export default function SimpleCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Route render={({history}) => (   
+          <Button size="small" variant="contained" color="primary" onClick={ () => { handleViewMap(props.location, history) }} >View in map</Button>
+        )} />
       </CardActions>
     </Card>
   );

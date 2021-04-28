@@ -5,6 +5,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import App from './pages/App';
 import theme from './theme';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
+import dotenv from 'dotenv'
+dotenv.config()
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

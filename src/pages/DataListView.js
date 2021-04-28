@@ -30,7 +30,7 @@ function displayCards(data){
             <div>
                 <SimpleCard businessName={inspection.aka_name} risk={inspection.risk} 
                 results={inspection.results} address={inspection.address} city={inspection.city} 
-                state={inspection.state} zip={inspection.zip}  />
+                state={inspection.state} zip={inspection.zip} location={inspection.location} />
                 <br/>
             </div>                                        
         ))                 

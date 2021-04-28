@@ -25,7 +25,6 @@ Project setup tasks
 
 - vs code react docs: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 
-- add dot env file
 - add babel & webpack  
     - what is the purpose of it?
 - use root relative babel plugin

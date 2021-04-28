@@ -50,6 +50,7 @@ export default function DataSearch() {
                     shrink: true,
                   }}
                   variant="outlined"
+                  placeholder="i.e. 60607"
                 />   
 
                 <br/><br/>

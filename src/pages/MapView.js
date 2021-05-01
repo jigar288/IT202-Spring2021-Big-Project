@@ -39,6 +39,6 @@ export function MapViewComponent(props) {
 
 export default GoogleApiWrapper({
   // eslint-disable-next-line no-undef
-  apiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY
+  apiKey: process.env.REACT_APP_GOOGLE_CLOUD_API_KEY
 })(MapViewComponent);
 

@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../components/NavBar'
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Alert from '@material-ui/lab/Alert';
 import SimpleCard from '../components/SimpleCard'
 
 const useStyles = makeStyles((theme) => ({
@@ -27,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
 function displayCards(data){
   return (
       data.map( (inspection) => (
-            <div>
-                <SimpleCard businessName={inspection.aka_name} risk={inspection.risk} 
-                results={inspection.results} address={inspection.address} city={inspection.city} 
-                state={inspection.state} zip={inspection.zip} location={inspection.location} />
-                <br/>
-            </div>                                        
-        ))                 
+        <div>
+            <SimpleCard businessName={inspection.aka_name} risk={inspection.risk} 
+            results={inspection.results} address={inspection.address} city={inspection.city} 
+            state={inspection.state} zip={inspection.zip} location={inspection.location} />
+            <br/>
+        </div>                                        
+      ))                 
   );
 }
 
@@ -44,20 +43,34 @@ function isDataPresent(data){
   return false
 }
 
-function displayError(){
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <Alert variant="filled" severity="error">
-        No data available to view. Please go back to search page to find data
-      </Alert>
-    </div>
-  );
+function saveData(data){
+  sessionStorage.setItem('inspection_id', data[0].inspection_id);
+  sessionStorage.setItem('cacheData', JSON.stringify(data) );
 }
 
 // ! FIXME: add explicit prop validation
 export default function DataListView(props) {
   const classes = useStyles();
+  
+  const showCachedData = () => {
+    const cacheData = JSON.parse(sessionStorage.getItem('cacheData'))
+    console.log(cacheData)
+
+    alert('You are about to view cached data. Please search again for new data' )
+
+    return (    
+     cacheData.map( (inspection) => (
+        <div>
+            <SimpleCard businessName={inspection.aka_name} risk={inspection.risk} 
+            results={inspection.results} address={inspection.address} city={inspection.city} 
+            state={inspection.state} zip={inspection.zip} location={inspection.location} />
+            <br/>
+        </div>                                        
+      ))      
+  );
+    
+  }
+
 
   return (
     <div>
@@ -70,7 +83,9 @@ export default function DataListView(props) {
               View Data
             </Typography>    
 
-            { isDataPresent(props.location.state) ? displayCards(props.location.state.data) : displayError()  }
+            { isDataPresent(props.location.state) ? displayCards(props.location.state.data) : showCachedData()  }
+            { isDataPresent(props.location.state) ? saveData(props.location.state.data) : console.log('no data to cache')  }
+
                     
           </Container>
         </div>        
